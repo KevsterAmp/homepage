@@ -1,0 +1,220 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Server Stats:
+    - Saturn:
+        widget:
+          type: glances
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_SATURN_GLANCES_URL}}
+          version: 4
+          metric: info
+
+    - "Saturn's SpeedTest":
+        icon: speedtest-tracker.png
+        widget:
+          type: speedtest
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_SATURN_SPEEDTEST_URL}}
+          bitratePrecision: 3 # optional, default is 0
+
+    - Mercury:
+        widget:
+          type: glances
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_MERCURY_GLANCES_URL}}
+          version: 4
+          metric: info
+
+    - "Mercury's SpeedTest":
+        # prettier-ignore
+        icon: {{HOMEPAGE_VAR_MERCURY_SPEEDTEST_ICON}}
+        widget:
+          type: speedtest
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_MERCURY_SPEEDTEST_URL}}
+          bitratePrecision: 3 # optional, default is 0
+
+- Arr:
+    - Portainer:
+        icon: portainer.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_PORTAINER_DOMAIN}}
+        description: Docker WebUI Management
+        widget:
+          type: portainer
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_PORTAINER_URL}}
+          # prettier-ignore
+          env: {{HOMEPAGE_VAR_PORTAINER_ENV}}
+          # prettier-ignore
+          key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
+
+    - Sonarr:
+        icon: sonarr.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_SONARR_DOMAIN}}
+        description: Series Management
+        widget:
+          type: sonarr
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_SONARR_DOMAIN}}
+          # prettier-ignore
+          key: {{HOMEPAGE_VAR_SONARR_KEY}}
+
+    - Radarr:
+        icon: radarr.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_RADARR_DOMAIN}}
+        description: Movies Management
+        widget:
+          type: radarr
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_RADARR_DOMAIN}}
+          # prettier-ignore
+          key: {{HOMEPAGE_VAR_RADARR_KEY}}
+          fields: ["wanted", "queued", "movies"]
+
+    - Prowlarr:
+        icon: prowlarr.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_PROWLARR_DOMAIN}}
+        description: Indexer Management
+        widget:
+          type: prowlarr
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_PROWLARR_DOMAIN}}
+          # prettier-ignore
+          key: {{HOMEPAGE_VAR_PROWLARR_KEY}}
+          fields: ["numberOfGrabs", "numberOfQueries"]
+
+    - qBittorrent:
+        icon: qbittorrent.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_QBITT_DOMAIN}}
+        description: BitTorrent Downloader
+        widget:
+          type: qbittorrent
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_QBITT_DOMAIN}}
+          # prettier-ignore
+          username: {{HOMEPAGE_VAR_QBITT_USER}}
+          # prettier-ignore
+          password: {{HOMEPAGE_VAR_QBITT_PASS}}
+          enableLeechProgress: false # optional, defaults to false
+
+- Main:
+    - Jellyfin:
+        icon: jellyfin.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_JELLYFIN_DOMAIN}}
+        description: Media Streaming Server
+        widget:
+          type: jellyfin
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_JELLYFIN_DOMAIN}}
+          # prettier-ignore
+          key: {{HOMEPAGE_VAR_JELLYFIN_KEY}}
+          enableBlocks: true # optional, defaults to false
+          enableNowPlaying: false # optional, defaults to true
+          enableUser: true # optional, defaults to false
+          showEpisodeNumber: true # optional, defaults to false
+          expandOneStreamToTwoRows: false # optional, defaults to true
+          fields: ["movies", "series", "episodes"]
+        # prettier-ignore
+        ping: {{HOMEPAGE_VAR_JELLYFIN_DOMAIN}}
+
+    - Immich:
+        icon: immich.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_IMMICH_DOMAIN}}
+        description: Photo & Vid Backup + Management
+        widget:
+          type: immich
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_IMMICH_DOMAIN}}
+          # prettier-ignore
+          key: {{HOMEPAGE_VAR_IMMICH_KEY}}
+          version: 2
+        # prettier-ignore
+        ping: {{HOMEPAGE_VAR_IMMICH_DOMAIN}}
+
+    - PiHole:
+        icon: pi-hole.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_PIHOLE_DOMAIN}}
+        description: DNS Server
+        widget:
+          type: pihole
+          # prettier-ignore
+          url: {{HOMEPAGE_VAR_PIHOLE_DOMAIN}}
+          version: 6 # required if running v6 or higher, defaults to 5
+          # prettier-ignore
+          key: {{HOMEPAGE_VAR_PIHOLE_KEY}}
+        # prettier-ignore
+        ping: {{HOMEPAGE_VAR_PIHOLE_DOMAIN}}
+
+- Last:
+    - Misc:
+        - Tailscale:
+            icon: tailscale.png
+            # prettier-ignore
+            href: {{HOMEPAGE_VAR_TAILSCALE_URL}}
+            description: VPN for access outside local network
+        - Grafana:
+            icon: grafana.png
+            # prettier-ignore
+            href: {{HOMEPAGE_VAR_GRAFANA_URL}}
+            description: Dashboard and Monitoring
+        - File Browser:
+            icon: filebrowser.png
+            # prettier-ignore
+            href: {{HOMEPAGE_VAR_FILEBROWSER_URL}}
+            description: not yet added
+        - Minecraft:
+            icon: minecraft.png
+            widget:
+              type: minecraft
+              # prettier-ignore
+              url: {{HOMEPAGE_VAR_MINECRAFT_URL}}
+
+    - Calendar:
+        - " ":
+            widget:
+              type: calendar
+              firstDayInWeek: sunday # optional - defaults to monday
+              view: monthly # optional - possible values monthly, agenda
+              maxEvents: 10 # optional - defaults to 10
+              showTime: true # optional - show time for event happening today - defaults to false
+              # prettier-ignore
+              timezone: {{HOMEPAGE_VAR_TZ}} # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+              integrations: # optional
+                - type: ical # Show calendar events from another service
+                  # prettier-ignore
+                  url: {{HOMEPAGE_VAR_ICAL_URL}}
+                  name: work # required - name for these calendar events
+
+    - Self-Projects:
+        - Do It Dashboard:
+            # prettier-ignore
+            icon: {{HOMEPAGE_VAR_DOIT_ICON}}
+            # prettier-ignore
+            href: {{HOMEPAGE_VAR_DOIT_URL}}
+            description: Fullstack To-do app demo
+            ping: {{HOMEPAGE_VAR_DOIT_URL}}
+
+        - Strava-receiptify:
+            icon: strava.png
+            # prettier-ignore
+            href: {{HOMEPAGE_VAR_STRAVA_RECEIPTIFY}}
+            description: Turn your Strava stats into receipts
+            # prettier-ignore
+            ping: {{HOMEPAGE_VAR_STRAVA_RECEIPTIFY}}
+
+        - my_name.com:
+            description: Personal Portfolio + Blog
+            # prettier-ignore
+            href: {{HOMEPAGE_VAR_PORTFOLIO}}
+            # prettier-ignore
+            ping: {{HOMEPAGE_VAR_PORTFOLIO}}

@@ -1,0 +1,40 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- FavSites:
+    - Messenger:
+        - icon: facebook.png
+          href: https://facebook.com/
+
+    - Github:
+        - icon: github.png
+          href: https://github.com/
+
+    - Reddit:
+        - icon: reddit.png
+          href: https://reddit.com/
+
+    - YouTube:
+        - icon: youtube.png
+          href: https://youtube.com/
+
+    - Jira:
+        - icon: jira.png
+          href: https://codeninja.atlassian.net/jira
+
+    - Gitlab:
+        - icon: gitlab.png
+          href: https://gitlab.com/
+
+    - Gmail:
+        - icon: gmail.png
+          href: https://gmail.com/
+
+    - Strava:
+        - icon: strava.png
+          href: https://strava.com/
+
+    - Cloudflare:
+        - icon: cloudflare.png
+          href: https://dash.cloudflare.com/

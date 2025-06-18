@@ -1,0 +1,46 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+title: Homepage | kevserver
+theme: dark
+background:
+  image: https://images.unsplash.com/photo-1550353127-b0da3aeaa0ca?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  blur: md # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+
+layout:
+  FavSites:
+    iconsOnly: true
+    header: false
+  Server Stats:
+    style: row
+    columns: 4
+    header: false
+    group a:
+    server info a:
+    group b:
+    server info b:
+  Main:
+    style: row
+    columns: 3
+    header: false
+  Arr:
+    style: row
+    columns: 5
+    header: false
+  Last:
+    style: row
+    columns: 3
+    header: false
+    Misc:
+    Calendar:
+    Self-Projects:
+
+useEqualHeights: true
+statusStyle: "dot"
+disableCollapse: true
