@@ -40,19 +40,15 @@
           bitratePrecision: 3 # optional, default is 0
 
 - Arr:
-    - Portainer:
-        icon: portainer.png
+    - Jellyseerr:
+        icon: jellyseerr.png
         # prettier-ignore
-        href: {{HOMEPAGE_VAR_PORTAINER_DOMAIN}}
-        description: Docker WebUI Management
+        href: {{HOMEPAGE_VAR_JELLYSEERR_DOMAIN}}
+        description: Media Requests
         widget:
-          type: portainer
-          # prettier-ignore
-          url: {{HOMEPAGE_VAR_PORTAINER_URL}}
-          # prettier-ignore
-          env: {{HOMEPAGE_VAR_PORTAINER_ENV}}
-          # prettier-ignore
-          key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
+          type: jellyseerr
+          url: {{HOMEPAGE_VAR_JELLYSEERR_DOMAIN}}
+          key: {{HOMEPAGE_VAR_JELLYSEERR_KEY}}
 
     - Sonarr:
         icon: sonarr.png
@@ -160,6 +156,19 @@
 
 - Last:
     - Misc:
+        - Portainer:
+            icon: portainer.png
+            # prettier-ignore
+            href: {{HOMEPAGE_VAR_PORTAINER_DOMAIN}}
+            description: Docker WebUI Management
+            widget:
+              type: portainer
+              # prettier-ignore
+              url: {{HOMEPAGE_VAR_PORTAINER_URL}}
+              # prettier-ignore
+              env: {{HOMEPAGE_VAR_PORTAINER_ENV}}
+              # prettier-ignore
+              key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
         - Tailscale:
             icon: tailscale.png
             # prettier-ignore
@@ -175,12 +184,6 @@
             # prettier-ignore
             href: {{HOMEPAGE_VAR_FILEBROWSER_URL}}
             description: not yet added
-        - Minecraft:
-            icon: minecraft.png
-            widget:
-              type: minecraft
-              # prettier-ignore
-              url: {{HOMEPAGE_VAR_MINECRAFT_URL}}
 
     - Calendar:
         - " ":
