@@ -8,6 +8,7 @@ providers:
 
 title: Homepage | kevserver
 theme: dark
+color: blue
 background:
   image: https://images.unsplash.com/photo-1550353127-b0da3aeaa0ca?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
   blur: md # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
@@ -44,3 +45,4 @@ layout:
 useEqualHeights: true
 statusStyle: "dot"
 disableCollapse: true
+fullWidth: true
