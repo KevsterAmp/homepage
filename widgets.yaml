@@ -5,28 +5,28 @@
 
 - greeting:
     text_size: 2xl
-    text: Kev - Server
+    text: " "
 
 - glances:
     url: {{HOMEPAGE_VAR_SATURN_GLANCES_URL}}
     label: saturn
     version: 4
-    cpu: true
-    mem: true
+    cpu: false
+    mem: false
     cputemp: true
     uptime: true
     disk: /etc/hosts
 
 - greeting:
     text_size: 4xl
-    text: "|"
+    text: "  " 
 
 - glances:
     url: {{HOMEPAGE_VAR_MERCURY_GLANCES_URL}}
     label: mercury
     version: 4
-    cpu: true
-    mem: true
+    cpu: false
+    mem: false
     cputemp: true
     uptime: true
     disk: /etc/hosts
