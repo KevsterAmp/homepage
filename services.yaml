@@ -13,6 +13,8 @@
 
     - "Saturn's SpeedTest":
         icon: speedtest-tracker.png
+        # prettier-ignore
+        href: {{HOMEPAGE_VAR_SATURN_SPEEDTEST_URL}}
         widget:
           type: speedtest
           # prettier-ignore
@@ -29,6 +31,7 @@
 
     - "Mercury's SpeedTest":
         # prettier-ignore
+        href: {{HOMEPAGE_VAR_MERCURY_SPEEDTEST_URL}}
         icon: {{HOMEPAGE_VAR_MERCURY_SPEEDTEST_ICON}}
         widget:
           type: speedtest
